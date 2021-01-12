@@ -4,6 +4,7 @@
   list-style: none;
   outline: none;
   font-family: "Roboto", -apple-system, system-ui, sans-serif;
+  box-sizing: border-box;
 }
 
 body {
@@ -30,5 +31,34 @@ body {
     height: 100%;
     border-right: 1px solid #F1F1F1;
     padding: 60px 20px;
+  }
+}
+
+.button {
+  background-color: #4DD599;
+  border-radius: 4px;
+  color: #FFF;
+  border: 0;
+  padding: 10px 20px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: darken($color: #4DD599, $amount: 6%);
+  }
+
+  &:active {
+    background-color: darken($color: #4DD599, $amount: 10%);
+  }
+}
+
+.field {
+  background-color: #FFF;
+  border: 1px solid #EFEFEF;
+  border-radius: 4px;
+  padding: 8px 12px;
+  width: 100%;
+
+  &:focus {
+    border-color: #DBDBDB;
   }
 }
