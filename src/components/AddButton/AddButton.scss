@@ -1,15 +1,26 @@
 .add-button {
 
   &__popup {
+    position: relative;
     width: 235px;
     height: 148px;
     background-color: #FFF;
     box-shadow: 0 6px 10px rgba(0, 0, 0, .05);
     padding: 18px;
+    margin-top: -20px;
+    left: 10px;
+
 
     .button {
       width: 100%;
       margin-top: 15px;
+    }
+
+    &-close-btn {
+      position: absolute;
+      right: -8px;
+      top: -8px;
+      cursor: pointer;
     }
 
     &-colors {
@@ -24,7 +35,7 @@
         cursor: pointer;
         border: 2px solid transparent;
 
-        &:active {
+        &.active {
           border: 2px solid rgb(90, 84, 84);
         }
       }
