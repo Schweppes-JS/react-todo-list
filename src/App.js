@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import List from './components/List/index';
 import AddButton from './components/AddButton';
 import listSvg from './assets/img/list.svg';
@@ -6,6 +6,19 @@ import listSvg from './assets/img/list.svg';
 import data from './assets/db.json';
 
 function App() {
+  const [lists, setLists] = useState(data.lists.map(item => {
+    item.color = data.colors.filter(color => color.id === item.colorId)[0].name;
+    return item;
+  }));
+
+  const onAddList = (obj) => {
+    const newList = [
+      ...lists,
+      obj
+    ]
+    setLists(newList);
+    console.log(newList);
+  }
 
   return (
     <div className="todo">
@@ -17,21 +30,8 @@ function App() {
             active: true
           }
         ]} />
-        <List items={[
-          {
-            color: "green",
-            name: 'Shopping'
-          },
-          {
-            color: "blue",
-            name: 'Frontend'
-          },
-          {
-            color: "pink",
-            name: 'Films and serials'
-          }
-        ]} isRemovable />
-        <AddButton colors={data.colors} />
+        <List items={lists} isRemovable />
+        <AddButton onAdd={onAddList} colors={data.colors} />
       </div>
       <div className="todo__tasks">
       </div>

@@ -8,9 +8,30 @@ import './AddButton.scss';
 
 import Badge from '../Badge';
 
-const AddButton = ({ colors }) => {
+const AddButton = ({ colors, onAdd }) => {
   const [visiblePopup, setVisiblePopup] = useState(false);
   const [selectedColor, selectColor] = useState(colors[0].id);
+  const [inputValue, setInputValue] = useState('');
+
+  const addList = () => {
+    if (!inputValue) {
+      alert('Input task name');
+      return;
+    }
+    const color = colors.filter(col => col.id === selectedColor)[0].name;
+    onAdd({
+      "id": Math.random(),
+      "name": inputValue,
+      color
+    });
+    onClose();
+  }
+
+  const onClose = () => {
+    setVisiblePopup(false);
+    setInputValue('');
+    selectColor(colors[0].id);
+  }
 
   return (
     <div className="add-button">
@@ -29,8 +50,10 @@ const AddButton = ({ colors }) => {
           src={closeSvg}
           className="add-button__popup-close-btn"
           alt="close"
-          onClick={() => setVisiblePopup(false)} />
-        <input className="field" type="text" placeholder="Task Name"></input>
+          onClick={onClose} />
+
+        <input value={inputValue} onChange={e => setInputValue(e.target.value)} className="field" type="text" placeholder="Task Name"></input>
+
         <div className="add-button__popup-colors">
           {
             colors.map(color => <Badge
@@ -41,7 +64,7 @@ const AddButton = ({ colors }) => {
             />)
           }
         </div>
-        <button className="button">Add</button>
+        <button onClick={addList} className="button">Add</button>
       </div>}
     </div>
   )
