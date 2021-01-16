@@ -9,24 +9,24 @@ import './List.scss';
 
 const List = ({ items, isRemovable, onClick, onRemove }) => {
 
-const removeList = (item) => {
-  if (window.confirm('Do you realy wont to remove this task?')) {
-    onRemove(item);
+  const removeList = (item) => {
+    if (window.confirm('Do you realy wont to remove this task?')) {
+      onRemove(item);
+    }
   }
-}
 
   return (
     <ul onClick={onClick} className="list">
       {items.map((item, index) => (
         <li key={index} className={classNames(item.className, { active: item.active })}>
           <i>
-            {item.icon ? item.icon : <Badge color={item.color} />}
+            {item.icon ? item.icon : <Badge color={item.color.name} />}
           </i>
           <span>{item.name}</span>
           {isRemovable && <img
             className="list__remove-icon"
             src={removeSvg} alt="Remove item icon"
-            onClick={() => removeList(item)}/>}
+            onClick={() => removeList(item)} />}
         </li>
       ))}
     </ul>

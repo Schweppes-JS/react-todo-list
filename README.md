@@ -1,4 +1,14 @@
-# Getting Started with Create React App
+# Run Project Locally
+
+1. Clone or fork this repository.
+2. Open terminal.
+3. In the terminal, go to the location of the downloaded archive.
+4. Then write in terminal:
+    1. **npm install**
+    2. **npx json-server ./src/assets/db.json --port 3001**
+    3. **npm start**
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
