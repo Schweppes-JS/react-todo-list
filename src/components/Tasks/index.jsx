@@ -23,7 +23,7 @@ const Tasks = () => {
               </svg>
             </label>
           </div>
-          <p>React Hooks (useState, useReducer, useEffect etc.)</p>
+          <input value="React Hooks (useState, useReducer, useEffect etc.)" />
         </div>
       </div>
     </div>

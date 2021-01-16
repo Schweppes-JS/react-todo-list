@@ -21,8 +21,11 @@
             display: flex;
             align-items: center;
 
-            p {
+            input {
                 margin-left: 15px;
+                border: 0;
+                font-size: 16px;
+                width: 100%;
             }
         }
     }
@@ -45,6 +48,10 @@
         
         input {
             display: none;
+        }
+
+        svg {
+            transition: all .15s ease-in-out;
         }
 
         input:checked + label {
@@ -83,6 +90,7 @@
             border: 2px solid  #E8E8E8;
             border-radius: 50%;
             margin: 0;
+            transition: all .15s ease-in-out;
 
             svg {
                 opacity: 0;
