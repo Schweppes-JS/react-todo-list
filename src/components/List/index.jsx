@@ -1,5 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
+import axios from 'axios';
 
 import removeSvg from '../../assets/img/remove.svg';
 
@@ -11,7 +12,9 @@ const List = ({ items, isRemovable, onClick, onRemove }) => {
 
   const removeList = (item) => {
     if (window.confirm('Do you realy wont to remove this task?')) {
-      onRemove(item);
+      axios.delete('http://localhost:3001/lists/' + item.id).then(() => {
+        onRemove(item.id);
+      });
     }
   }
 

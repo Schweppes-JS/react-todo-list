@@ -20,6 +20,7 @@ body {
   top: 50%;
   width: 750px;
   height: 530px;
+  min-height: 530px;
   transform: translate(-50%, -50%);
   box-shadow: 1px 2px 20px #F3F3F3;
   border-radius: 10px;
@@ -32,6 +33,7 @@ body {
     height: 100%;
     border-right: 1px solid #F1F1F1;
     padding: 60px 20px;
+    overflow-y: auto;
   }
 
   &__tasks {
