@@ -1,4 +1,6 @@
 .list {
+  $self: &;
+
   margin-bottom: 30px;
 
   &__add-icon {
@@ -14,6 +16,22 @@
     align-items: center;
     cursor: pointer;
     padding: 10px 12px;
+
+    &:hover #{$self}__remove-icon {
+      opacity: .3;
+    }
+
+    #{$self}__remove-icon {
+      opacity: 0;
+
+      &:hover {
+        opacity: .8;
+      }
+    }
+
+    span {
+      flex: 1;
+    }
 
     &:hover {
       background: rgba(255, 255, 255, .5);

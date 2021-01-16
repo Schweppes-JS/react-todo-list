@@ -1,11 +1,20 @@
 import React from 'react';
 import classNames from 'classnames';
 
+import removeSvg from '../../assets/img/remove.svg';
+
 import Badge from '../Badge';
 
 import './List.scss';
 
-const List = ({ items, isRemovable, onClick }) => {
+const List = ({ items, isRemovable, onClick, onRemove }) => {
+
+const removeList = (item) => {
+  if (window.confirm('Do you realy wont to remove this task?')) {
+    onRemove(item);
+  }
+}
+
   return (
     <ul onClick={onClick} className="list">
       {items.map((item, index) => (
@@ -14,6 +23,10 @@ const List = ({ items, isRemovable, onClick }) => {
             {item.icon ? item.icon : <Badge color={item.color} />}
           </i>
           <span>{item.name}</span>
+          {isRemovable && <img
+            className="list__remove-icon"
+            src={removeSvg} alt="Remove item icon"
+            onClick={() => removeList(item)}/>}
         </li>
       ))}
     </ul>

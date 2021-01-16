@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
+
 import List from './components/List/index';
 import AddButton from './components/AddButton';
+import Tasks from './components/Tasks';
+
 import listSvg from './assets/img/list.svg';
 
 import data from './assets/db.json';
@@ -30,10 +33,11 @@ function App() {
             active: true
           }
         ]} />
-        <List items={lists} isRemovable />
+        <List onRemove={(item) => alert(1)} items={lists} isRemovable />
         <AddButton onAdd={onAddList} colors={data.colors} />
       </div>
       <div className="todo__tasks">
+        <Tasks />
       </div>
     </div>
   );
