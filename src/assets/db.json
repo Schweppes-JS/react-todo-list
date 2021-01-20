@@ -14,25 +14,28 @@
       "id": 3,
       "name": "Books",
       "colorId": 2
+    },
+    {
+      "name": "Portfolio",
+      "colorId": 1,
+      "id": 4
+    },
+    {
+      "name": "English",
+      "colorId": 8,
+      "id": 5
+    },
+    {
+      "name": "Find job",
+      "colorId": 7,
+      "id": 6
     }
   ],
   "tasks": [
     {
-      "id": 1,
-      "listId": 2,
-      "text": "Изучить JavaScript",
-      "completed": true
-    },
-    {
-      "id": 2,
-      "listId": 2,
-      "text": "Изучить паттерны проектирования",
-      "completed": false
-    },
-    {
       "id": 3,
       "listId": 2,
-      "text": "ReactJS Hooks (useState, useReducer, useEffect и т.д.)",
+      "text": "ReactJS Hooks (useState, useReducer, useEffect)",
       "completed": true
     },
     {
@@ -42,70 +45,16 @@
       "completed": false
     },
     {
-      "listId": 2,
-      "text": "123",
-      "completed": true,
+      "listId": 5,
+      "text": "Learn past simple tens",
+      "completed": false,
       "id": 5
     },
     {
-      "listId": 1,
-      "text": "test",
+      "listId": 6,
+      "text": "Create resume",
       "completed": false,
       "id": 6
-    },
-    {
-      "listId": 1,
-      "text": "qweqwe",
-      "completed": false,
-      "id": 7
-    },
-    {
-      "listId": 1,
-      "text": "qweqwe",
-      "completed": true,
-      "id": 8
-    },
-    {
-      "listId": 1,
-      "text": "123",
-      "completed": false,
-      "id": 9
-    },
-    {
-      "listId": 4,
-      "text": "Купить 1984!",
-      "completed": true,
-      "id": 10
-    },
-    {
-      "listId": 2,
-      "text": "222",
-      "completed": true,
-      "id": 12
-    },
-    {
-      "listId": 3,
-      "text": "asd",
-      "completed": false,
-      "id": 13
-    },
-    {
-      "listId": 3,
-      "text": "",
-      "completed": false,
-      "id": 14
-    },
-    {
-      "listId": 3,
-      "text": "",
-      "completed": false,
-      "id": 15
-    },
-    {
-      "listId": 2,
-      "text": "asdaw",
-      "completed": false,
-      "id": 16
     }
   ],
   "colors": [

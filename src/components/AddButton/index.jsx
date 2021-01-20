@@ -29,8 +29,8 @@ const AddButton = ({ colors, onAdd }) => {
     }
     setIsLoading(true);
     axios.post('http://localhost:3001/lists', { name: inputValue, colorId: selectedColor }).then(({ data }) => {
-      const color = colors.filter(col => col.id === selectedColor)[0].name;
-      const listObj = { ...data, color: { name: color } };
+      const color = colors.filter(col => col.id === selectedColor)[0];
+      const listObj = { ...data, color, tasks: [] };
       onAdd(listObj);
       onClose();
     })
