@@ -27,13 +27,34 @@ function App() {
     setLists(newList);
   }
 
+  const onAddTask = (listId, taskObj) => {
+    const newList = lists.map(item => {
+      if (item.id === listId) {
+        item.tasks = [...item.tasks, taskObj];
+      }
+      return item;
+    });
+    setLists(newList);
+  }
+
+  const onEditListTitle = (id, title) => {
+    const newList = lists.map(list => {
+      if (list.id === id) {
+        list.name = title;
+      }
+      return list;
+    })
+    setLists(newList);
+  }
+
   return (
     <div className="todo">
       <div className="todo__sidebar">
         <List items={[
           {
+            active: true,
             icon: <img src={listSvg} alt="List icon" />,
-            name: 'All tasks',
+            name: 'All lists',
             active: true
           }
         ]} />
@@ -41,17 +62,17 @@ function App() {
           (<List onRemove={(id) => {
             const newList = lists.filter(item => item.id !== id);
             setLists(newList);
-          }} 
+          }}
             items={lists}
-            isRemovable 
+            isRemovable
             onClickItem={item => setActiveItem(item)}
-            activeItem={activeItem}/>) :
+            activeItem={activeItem} />) :
           ('Loading...')
         }
         <AddButton onAdd={onAddList} colors={colors} />
       </div>
       <div className="todo__tasks">
-        {lists && activeItem && <Tasks list={activeItem} />}
+        {lists && activeItem && <Tasks list={activeItem} onAddTask={onAddTask} onEditTitle={onEditListTitle} />}
       </div>
     </div>
   );

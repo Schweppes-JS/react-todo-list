@@ -33,7 +33,6 @@ body {
     height: 100%;
     border-right: 1px solid #F1F1F1;
     padding: 60px 20px;
-    overflow-y: auto;
   }
 
   &__tasks {
@@ -49,6 +48,7 @@ body {
   border: 0;
   padding: 10px 20px;
   cursor: pointer;
+  font-size: 14px;
 
   &:hover {
     background-color: darken($color: #4DD599, $amount: 6%);
@@ -56,6 +56,23 @@ body {
 
   &:active {
     background-color: darken($color: #4DD599, $amount: 10%);
+  }
+
+  &:disabled {
+    background: #D8D8D8;
+  }
+
+  &--grey {
+    background: #F4F6F8;
+    color: #444444;
+
+    &:hover {
+      background: darken(#F4F6F8, 4%);
+    }
+
+    &:active {
+      background: darken(#F4F6F8, 7%);
+    }
   }
 }
 
@@ -65,6 +82,7 @@ body {
   border-radius: 4px;
   padding: 8px 12px;
   width: 100%;
+  font-size: 14px;
 
   &:focus {
     border-color: #DBDBDB;

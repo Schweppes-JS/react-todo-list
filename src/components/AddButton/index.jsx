@@ -33,9 +33,11 @@ const AddButton = ({ colors, onAdd }) => {
       const listObj = { ...data, color: { name: color } };
       onAdd(listObj);
       onClose();
-    }).finally(() => {
-      setIsLoading(false);
-    });
+    })
+      .catch(() => alert('Error on adding list'))
+      .finally(() => {
+        setIsLoading(false);
+      });
   }
 
   const onClose = () => {
@@ -52,7 +54,7 @@ const AddButton = ({ colors, onAdd }) => {
           {
             className: "list__add-icon",
             icon: <img src={addSvg} alt="List icon" />,
-            name: 'Add task'
+            name: 'Add list'
           }
         ]}
       />
@@ -63,7 +65,7 @@ const AddButton = ({ colors, onAdd }) => {
           alt="close"
           onClick={onClose} />
 
-        <input value={inputValue} onChange={e => setInputValue(e.target.value)} className="field" type="text" placeholder="Task Name"></input>
+        <input value={inputValue} onChange={e => setInputValue(e.target.value)} className="field" type="text" placeholder="List name"></input>
 
         <div className="add-button__popup-colors">
           {
