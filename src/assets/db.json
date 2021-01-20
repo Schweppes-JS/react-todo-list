@@ -24,37 +24,14 @@
       "name": "English",
       "colorId": 8,
       "id": 5
-    },
-    {
-      "name": "Find job",
-      "colorId": 7,
-      "id": 6
     }
   ],
   "tasks": [
     {
-      "id": 3,
-      "listId": 2,
-      "text": "ReactJS Hooks (useState, useReducer, useEffect)",
-      "completed": true
-    },
-    {
       "id": 4,
       "listId": 2,
-      "text": "Redux (redux-observable, redux-saga)",
+      "text": "Redux",
       "completed": false
-    },
-    {
-      "listId": 5,
-      "text": "Learn past simple tens",
-      "completed": false,
-      "id": 5
-    },
-    {
-      "listId": 6,
-      "text": "Create resume",
-      "completed": false,
-      "id": 6
     }
   ],
   "colors": [

@@ -1,12 +1,18 @@
+# Demo
+
+![print](./demo.gif)
+
 # Run Project Locally
 
 1. Clone or fork this repository.
 2. Open terminal.
 3. In the terminal, go to the location of the downloaded archive.
 4. Then write in terminal:
-    1. **npm install**
-    2. **npx run fake-server**
-    3. **npm start**
+```
+   npm install
+   npm run fake-server
+   npm start
+```
 
 ## Getting Started with Create React App
 

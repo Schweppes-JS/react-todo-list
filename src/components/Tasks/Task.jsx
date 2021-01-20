@@ -16,8 +16,8 @@ function Task({ list, id, text, completed, onRemove, onEdit, onComplete }) {
         </label>
       </div>
       <p>{text}</p>
-      <div onClick={() => onEdit(list.id, { id, text })} className="tasks__items-row-actions">
-        <div>
+      <div className="tasks__items-row-actions">
+        <div onClick={() => onEdit(list.id, { id, text })} >
           <svg
             width="15"
             height="15"
